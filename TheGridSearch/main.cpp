@@ -21,8 +21,8 @@ string gridSearch(vector<string> G, vector<string> P) {
 	int r = P.size();
 	int c = P[0].size();
 
-	for (int i = 0; i < C - c; i++) { //iterate over rows
-		for (int j = 0; j < R - r; j++) { //iterate over characters in a row
+	for (int i = 0; i < R - r; i++) { //iterate over rows
+		for (int j = 0; j < C - c; j++) { //iterate over characters in a row
 			if (P[0][0] == G[i][j]) {
 				if (checkPattern(G, P, i, j, r, c)) return "YES";
 			}
@@ -33,7 +33,7 @@ string gridSearch(vector<string> G, vector<string> P) {
 }
 
 int main() {
-	vector <string> test_grid_0 = {
+	vector <string> test_grid_0_pos = {
 		"1234567890",
 		"0987654321",
 		"1111111111",
@@ -41,12 +41,56 @@ int main() {
 		"2222222222",
 	};
 
-	vector <string> test_pattern_0 = {
+	vector <string> test_pattern_0_pos = {
 		"876543",
 		"111111",
 		"111111",
 	};
 
-	
+	vector <string> test_grid_1_pos = {
+		"7283455864",
+		"6731158619",
+		"8988242643",
+		"3830589324",
+		"2229505813",
+		"5633845374",
+		"6473530293",
+		"7053106601",
+		"0834282956",
+		"4607924137",
+	};
+
+	vector <string> test_pattern_1_pos = {
+		"9505",
+		"3845",
+		"3530",
+	};
+
+	vector <string> test_grid_0_neg = {
+		"400453592126560",
+		"114213133098692",
+		"474386082879648",
+		"522356951189169",
+		"887109450487496",
+		"252802633388782",
+		"502771484966748",
+		"075975207693780",
+		"511799789562806",
+		"404007454272504",
+		"549043809916080",
+		"962410809534811",
+		"445893523733475",
+		"768705303214174",
+		"650629270887160",
+	};
+
+	vector <string> test_pattern_0_neg = {
+		"99",
+		"99",
+	};
+
+	cout << (gridSearch(test_grid_0_pos, test_pattern_0_pos) == "YES");
+	cout << (gridSearch(test_grid_1_pos, test_pattern_1_pos) == "YES");
+	cout << (gridSearch(test_grid_0_neg, test_pattern_0_neg) == "NO");
 	return 0;
 }
