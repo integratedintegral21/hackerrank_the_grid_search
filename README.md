@@ -1,0 +1,1 @@
+The solution to 'The Grid Search' problem. https://www.hackerrank.com/challenges/the-grid-search/problem
