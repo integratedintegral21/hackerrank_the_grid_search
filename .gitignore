@@ -1,0 +1,7 @@
+TheGridSearch.sln
+.git/
+.vs/
+Debug/
+TheGridSearch/Debug
+TheGridSearch/*.vcxproj
+TheGridSearch/*.vcxproj.*
